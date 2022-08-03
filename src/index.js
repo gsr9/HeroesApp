@@ -1,8 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {HeroesApp} from "./HeroesApp";
+import {createRoot} from "react-dom/client";
 
-ReactDOM.render(
-    <HeroesApp />
-  document.getElementById('root')
-);
+const container =
+  document.getElementById('root');
+const root = createRoot(container);
+root.render(<HeroesApp/>)
+// ReactDOM.render(
+//     <HeroesApp />,
+// );
