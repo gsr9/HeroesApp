@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useContext} from "react";
 import {useNavigate} from "react-router-dom";
+import {AuthContext} from "../context";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
+
+  const {login} = useContext(AuthContext)
+
   const handleLogIn = () => {
-    navigate('/marvel', {replace: true})
+    login('Guillermo Serra');
+    const lastPath = localStorage.getItem('lastPath');
+    const redirectUrl = lastPath ?? '/'
+    navigate(redirectUrl, {replace: true})
   }
+
 
   return (
     <div className={"container"}>
