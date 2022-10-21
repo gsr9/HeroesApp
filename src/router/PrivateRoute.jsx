@@ -7,7 +7,6 @@ export const PrivateRoute = ({children}) => {
   const {pathname, search} = useLocation();
   useEffect(() => {
     localStorage.setItem('lastPath', lastPath);
-    console.log('re rendered')
 
   }, [pathname, search])
 
